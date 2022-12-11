@@ -1,0 +1,12 @@
+**/.DS_Store
+nbproject
+manifest.mf
+build.xml
+package-lock.json
+
+.project
+.settings
+.idea/*
+/node_modules
+/.vscode
+
