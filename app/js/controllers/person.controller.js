@@ -16,7 +16,6 @@ define([], function () {
             // Bellow used to send a POST to endpoint http://localhost:8080/persons/savePerson
             $scope.name = null;
             $scope.removed = null;
-            $scope.lblMsg = null;
 
             $scope.postdata = function (name, removed) {
                 var data = {
@@ -26,10 +25,12 @@ define([], function () {
             
                 //Call the services
                 $http.post('http://localhost:8080/persons/savePerson', JSON.stringify(data))
-                    .then(function (response) {
-                       if (response.data)
-                        $scope.msg = "Post Data Submitted Successfully!";
-                    }, function (response) {
+                    .then(function success(response) {
+                        // This function handles success
+                        if (response.data)
+                            $scope.msg = "Post Data Submitted Successfully!";
+                    }, function error(response) {
+                        // this function handles error
                         $scope.msg = "Service not Exists";
                         $scope.statusval = response.status;
                         $scope.statustext = response.statusText;
