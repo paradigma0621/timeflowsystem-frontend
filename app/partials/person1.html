@@ -1,14 +1,14 @@
 <div ng-click="retornaValor()">
-    <p>Click here to see personName: {{personName}}</p>
+    <p>Click here to see the GET method: {{personName}}</p>
 </div>
 
     <div>
     Name : <input ng-model="name" /><br/><br/>
     Removed (write "true" or "false") : <input ng-model="removed" /><br/><br/>
-    <input type="button" value="Send" ng-click="postdata(name, removed)" /> <br/><br/>
+    <input type="button" value="Send" ng-click="postData(name, removed)" /> <br/><br/>
     </div>
     <p>Output Message : {{msg}}</p>
-    <p>StatusCode: {{statusval}}</p>
-    <p>Status: {{statustext}}</p>
+    <p>StatusCode: {{statusVal}}</p>
+    <p>Status: {{statusText}}</p>
     <p>Response Headers: {{headers}}</p>
     </div>

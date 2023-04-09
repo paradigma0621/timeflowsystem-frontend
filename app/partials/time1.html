@@ -1,3 +1,54 @@
-<div ng-click="retornaValor()">
-    <p>Click in here to receive the name: {{timeValue}}</p> 
+<style>
+    table, th, td {
+    border:1px solid black;
+    }
+</style>
+
+<div ng-click="getClocks(cx)">
+<table>
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Minutes Duration
+        </th>
+        <th>
+            Grade
+        </th>
+        <th>
+            Clocking Description
+        </th>
+        <th>
+            Subject
+        </th>
+        <th>
+            Clocking StartDate
+        </th>             
+        <th>
+            Clocking FinishDate
+        </th>              
+        <th>
+            Localization
+        </th>                                               
+        <th>
+            PersonId
+        </th>       
+        <th>
+            Removed
+        </th>           
+    <tr ng-repeat="c in clockings">
+        <td>{{c.id}}</td>  
+        <td>{{c.minutesDuration}}</td>
+        <td>{{c.grade}}</td>
+        <td>{{c.clockingDescription}}</td>
+        <td>{{c.subject}}</td>
+        <td>{{c.clockingStartDate}}</td>
+        <td>{{c.clockingFinishDate}}</td>
+        <td>{{c.localization}}</td>
+        <td>{{c.person.id}}</td>
+        <td>{{c.removed}}</td>
+    </tr>
+</table>
+
 </div>
