@@ -1,54 +1,75 @@
 <style>
     table, th, td {
-    border:1px solid black;
+        border:2px solid black;
+        padding: 10px;
+        line-height: 30px;
     }
+    
+    #oneId {
+        text-align: center;
+        font-size: 40px;
+        font-family: "Georgia";
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .oneClass {
+        font-size: 26px;
+    }
+
 </style>
 
-<div ng-click="getClocks(cx)">
-<table>
-    <tr>
-        <th>
-            Id
-        </th>
-        <th>
-            Minutes Duration
-        </th>
-        <th>
-            Grade
-        </th>
-        <th>
-            Clocking Description
-        </th>
-        <th>
-            Subject
-        </th>
-        <th>
-            Clocking StartDate
-        </th>             
-        <th>
-            Clocking FinishDate
-        </th>              
-        <th>
-            Localization
-        </th>                                               
-        <th>
-            PersonId
-        </th>       
-        <th>
-            Removed
-        </th>           
-    <tr ng-repeat="c in clockings">
-        <td>{{c.id}}</td>  
-        <td>{{c.minutesDuration}}</td>
-        <td>{{c.grade}}</td>
-        <td>{{c.clockingDescription}}</td>
-        <td>{{c.subject}}</td>
-        <td>{{c.clockingStartDate}}</td>
-        <td>{{c.clockingFinishDate}}</td>
-        <td>{{c.localization}}</td>
-        <td>{{c.person.id}}</td>
-        <td>{{c.removed}}</td>
-    </tr>
-</table>
+<p id="oneId">Clockings List</p>
+<div style="padding: 30px;">
+    <button style="padding: 20px" ng-click="getClocks(cx)"> Load data </button>
+    <br><br>
+    <table align="center" class="oneClass">
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Minutes Duration
+            </th>
+            <th>
+                Grade
+            </th>
+            <th>
+                Clocking Description
+            </th>
+            <th>
+                Subject
+            </th>
+            <th>
+                Clocking StartDate
+            </th>             
+            <th>
+                Clocking FinishDate
+            </th>              
+            <th>
+                Localization
+            </th>                                               
+            <th>
+                PersonId
+            </th>       
+            <th>
+                Removed
+            </th>
+        </tr>               
+        <tr ng-repeat="c in clockings"  ng-click="chooseOneClockingRow(c.id)">
+            <td>{{c.id}}</td>  
+            <td>{{c.minutesDuration}}</td>
+            <td>{{c.grade}}</td>
+            <td>{{c.clockingDescription}}</td>
+            <td>{{c.subject}}</td>
+            <td>{{c.clockingStartDate}}</td>
+            <td>{{c.clockingFinishDate}}</td>
+            <td>{{c.localization}}</td>
+            <td>{{c.person.id}}</td>
+            <td>{{c.removed}}</td>
+        </tr>
+    </table>
 
+    <br><br>
+    </div>
 </div>

@@ -6,7 +6,7 @@ define([], function () {
        
         $scope.getClocks  = function (callback) {
             if ($scope.clockings !== null && $scope.clockings !== '' && $scope.clockings !== undefined) {
-                console.log("Agora já recebeu os dados");
+                console.log("Now received the data");
                 console.log($scope.clockings);
                 console.log($scope.clockings[1]);
             } else {
@@ -17,15 +17,20 @@ define([], function () {
                         callback();
                     }
                 })
-                console.log("Fez requisição dos dados");
+                console.log("Did data acquisition");
                 console.log($scope.clockings);
             }    
         };
         
         $scope.cx  = function() {
-            console.log("chamou outro método");
             console.log($scope.clockings);
             $scope.getClocks();
-        }
+        };
+
+        $scope.chooseOneClockingRow = function(id) {
+            console.log("Choosed one line!! One with clocking.id: ");
+            console.log(id);
+        };
+
     }];
 });

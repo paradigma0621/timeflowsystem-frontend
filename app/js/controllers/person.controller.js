@@ -13,7 +13,6 @@ define([], function () {
                 });
             };
  
-
             // Bellow used to send a POST to endpoint http://localhost:8100/persons/savePerson
             $scope.name = null;
             $scope.removed = null;
