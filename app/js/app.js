@@ -7,6 +7,7 @@ define(['angular'], function (angular) {
 		'App.directives',
 		'App.providers',
 		'App.filters',
-		'App.controllers'
+		'App.controllers',
+		'App.factories'
 	]);
 });

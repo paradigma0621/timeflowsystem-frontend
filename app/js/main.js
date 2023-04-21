@@ -3,9 +3,9 @@ requirejs.config({
 
     paths: {
         underscore: '../lib/underscore/underscore-min',
-        angular: '../lib/angular/angular'
-        //, resource: 'lib/angular/angular-resource',
-       
+        angular: '../lib/angular/angular',
+	resource: 'lib/angular/angular-resource',
+	factories: 'factories/factories'
     },
 
     shim: {
@@ -18,7 +18,12 @@ requirejs.config({
         'states': {
             deps: ['angular'],
             exports: 'states'
+        },
+        'factories': { // adicionando a fábrica como um módulo a ser carregado
+            deps: ['angular'],
+            exports: 'factories'
         }
+        
     },
     priority: [
 		'angular'
@@ -34,7 +39,8 @@ requirejs(['angular',
             'providers/providers',
             'directives/directives',
             'filters/filters',
-            'controllers/controllers'
+            'controllers/controllers',
+            'factories' 
            ], function (angular, app, _) {
                angular.element(document).ready(function () {
                    angular.bootstrap(document, ['App']);

@@ -1,9 +1,15 @@
 define([], function () {
     'use strict';
 
-    var MainController = function ($scope) {
-        $scope.viewName = "View 1";
-    };
+	return ['$scope', '$http',
+		function($scope, $http) {
+		        $scope.viewName = "View 2";
+    
+    
+		$scope.doSomething = function() {
+			console.log("tupatipatupa");
+		}
+		
+    }];
 
-    return MainController;
 });

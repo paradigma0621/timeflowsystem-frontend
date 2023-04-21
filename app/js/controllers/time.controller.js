@@ -4,6 +4,8 @@ define([], function () {
     return ['$scope', '$http', 
         function($scope, $http) {
        
+        $scope.hideEditClocking = true;
+
         $scope.getClocks  = function (callback) {
             if ($scope.clockings !== null && $scope.clockings !== '' && $scope.clockings !== undefined) {
                 console.log("Now received the data");
@@ -28,6 +30,7 @@ define([], function () {
         };
 
         $scope.chooseOneClockingRow = function(id) {
+            $scope.hideEditClocking = false;
             console.log("Choosed one line!! One with clocking.id: ");
             console.log(id);
         };
